@@ -1,0 +1,18 @@
+# Môi trường Python
+.venv/
+.venv312/
+
+# Cache Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Cấu hình bí mật và giấy phép
+.env
+.env.*
+!.env.example
+*.lic
+
+# Dữ liệu W&B sinh tự động
+wandb/
