@@ -1,60 +1,47 @@
 # N-Queens Assignment
 
-Project so sánh năm SAT encoding tự viết trên Glucose3 và CaDiCaL
-với bốn phương pháp đối chứng: OR-Tools CP-SAT, IBM CP Optimizer,
-IBM CPLEX MIP và Gurobi MIP.
-
-Bài toán là tìm một cách đặt N quân hậu không tấn công nhau
-trên bàn cờ N × N, hoặc chứng minh không có nghiệm.
-Project không liệt kê hay đếm toàn bộ nghiệm trong benchmark.
+So sánh năm SAT encoding tự viết trên Glucose3 và CaDiCaL
+với OR-Tools CP-SAT, IBM CP Optimizer, IBM CPLEX MIP và Gurobi MIP.
 
 Repository: https://github.com/nvchien3406/nqueens-assignment
 
-## Phạm vi so sánh
+Bài toán là tìm một nghiệm N-Queens hoặc chứng minh vô nghiệm.
+Benchmark không liệt kê hoặc đếm tất cả nghiệm.
 
-| Nhóm | Phương pháp | Solver |
-|---|---|---|
-| SAT | Binomial / Pairwise | Glucose3, CaDiCaL 1.9.5 |
-| SAT | Binary / Bitwise | Glucose3, CaDiCaL 1.9.5 |
-| SAT | Commander | Glucose3, CaDiCaL 1.9.5 |
-| SAT | Product đệ quy | Glucose3, CaDiCaL 1.9.5 |
-| SAT | Sequential Counter | Glucose3, CaDiCaL 1.9.5 |
-| CP-SAT | Biến nguyên và AllDifferent | OR-Tools CP-SAT |
-| CP | Biến nguyên và AllDifferent | IBM CP Optimizer |
-| MIP | Biến nhị phân theo ô | IBM CPLEX MIP |
-| MIP | Biến nhị phân theo ô | Gurobi |
+## Phạm vi
+
+| Phương pháp | Solver |
+|---|---|
+| Binomial / Pairwise | Glucose3, CaDiCaL 1.9.5 |
+| Binary / Bitwise | Glucose3, CaDiCaL 1.9.5 |
+| Commander | Glucose3, CaDiCaL 1.9.5 |
+| Product đệ quy | Glucose3, CaDiCaL 1.9.5 |
+| Sequential Counter | Glucose3, CaDiCaL 1.9.5 |
+| CP-SAT | Google OR-Tools |
+| CP | IBM CP Optimizer |
+| MIP | IBM CPLEX |
+| MIP | Gurobi |
 
 Tổng cộng: **5 encoding × 2 SAT solver + 4 đối chứng = 14 cấu hình**.
 
-Các encoder AMO được tự viết bằng hàm Python.
-PySAT được dùng để gọi SAT solver, không dùng CardEnc để sinh các encoding.
+Các encoder được viết bằng hàm Python.
+PySAT chỉ được dùng để gọi solver, không dùng CardEnc để sinh CNF.
 
-## Trạng thái hiện tại
+## Trạng thái
 
-- Đã triển khai năm encoder, validator và bộ test encoding.
-- Đã chuyển Product sang phiên bản đệ quy và bổ sung test cho nhóm lớn.
-- SAT, CP-SAT và Gurobi đã vượt qua các kiểm tra N-Queens nhỏ
-  trước lần cập nhật Product và mở rộng cấu hình gần nhất.
-- Gurobi đã giải được N = 64 và nghiệm đã qua validator.
-- Đã triển khai worker chạy tiến trình riêng và bộ giám sát thời gian/RAM.
-- Đã có correctness runner; cần chạy lại sau thay đổi encoding.
-- Hai module CPLEX đã có code, nhưng chưa xác nhận chạy trong project mới;
-  phần môi trường IBM đang chờ hoàn tất.
-- Đã có cấu hình pilot.
-- `main_experiment.py` và `evaluation/comparator.py` đang chờ triển khai.
-- Chưa có kết quả benchmark chính thức.
-- Docker, W&B và notebook phân tích là các phần tùy chọn chưa triển khai.
-
-Các kiểm tra nhỏ đã chạy chưa đủ để xác nhận cơ chế dừng khi vượt
-timeout hoặc RAM. Cần kiểm tra riêng các cơ chế này trước benchmark lớn.
+- Đã triển khai năm encoder và năm module solver.
+- Correctness runner đã đạt 98/98 ca, không bỏ qua cấu hình.
+- Đã hoàn thành benchmark gồm 756 lượt.
+- Đã có comparator và notebook phân tích.
+- Đã xuất bảng CSV và biểu đồ PNG/PDF.
+- Báo cáo đang được chuẩn bị.
+- Docker và W&B chưa nằm trong quy trình thực nghiệm đã kiểm chứng.
 
 ## Cấu trúc
 
 ```text
 src/
-├── __init__.py
 ├── encodings/
-│   ├── __init__.py
 │   ├── common.py
 │   ├── binomial.py
 │   ├── binary.py
@@ -62,101 +49,86 @@ src/
 │   ├── product.py
 │   └── sequential_counter.py
 ├── solvers/
-│   ├── __init__.py
 │   ├── sat_solvers.py
 │   ├── cp_sat.py
 │   ├── cplex_cp.py
 │   ├── cplex_mip.py
 │   └── gurobi_mip.py
 ├── evaluation/
-│   ├── __init__.py
 │   ├── correctness.py
 │   ├── worker.py
 │   └── comparator.py
 ├── utils/
-│   ├── __init__.py
 │   ├── validation.py
 │   ├── resource_monitor.py
 │   └── wandb_logger.py
 └── main_experiment.py
 
-tests/
-└── test_encodings.py
-
 configs/
+├── main.json
 └── pilot.json
 
-results/
 notebooks/
-README.md
+└── data_analysis.ipynb
+
+tests/
+results/
+resume_experiment.py
 requirements.txt
-.gitignore
-.env.example
-Dockerfile
+requirements-analysis.txt
+README.md
 ```
 
-Các file có trong cây thư mục không đồng nghĩa với việc đã triển khai
-hoặc kiểm thử đầy đủ; xem mục trạng thái hiện tại.
-
-## Trách nhiệm các phần
+Các thư mục package có thêm `__init__.py`.
 
 | Thành phần | Vai trò |
 |---|---|
-| `encodings/common.py` | Đánh số biến ô, cấp biến phụ, tạo nhóm và ghép CNF |
-| Các file encoder | Sinh clause cho ràng buộc AMO |
-| `solvers/sat_solvers.py` | Gọi Glucose3/CaDiCaL, giải mã và kiểm tra nghiệm |
-| Các solver CP/MIP | Xây dựng mô hình native và gọi solver tương ứng |
-| `evaluation/worker.py` | Chạy một cấu hình trong tiến trình riêng, lưu log và kết quả |
-| `evaluation/correctness.py` | Kiểm tra trạng thái và nghiệm trên các ca nhỏ |
-| `evaluation/comparator.py` | Dự kiến tổng hợp và so sánh kết quả đã lưu |
-| `utils/validation.py` | Kiểm tra nghiệm độc lập với mô hình solver |
-| `utils/resource_monitor.py` | Theo dõi thời gian và RSS của cây tiến trình |
-| `main_experiment.py` | Dự kiến điều phối các lượt chạy theo cấu hình |
-| `configs/` | Cấu hình thí nghiệm |
-| `results/` | Kết quả và log |
-| `notebooks/` | Dự kiến phân tích và vẽ biểu đồ |
+| `encodings/common.py` | Biến ô, biến phụ, nhóm ràng buộc và ghép CNF |
+| Các encoder | Sinh clause AMO |
+| Các solver | Dựng mô hình, gọi solver và giải mã nghiệm |
+| `validation.py` | Kiểm tra nghiệm độc lập |
+| `worker.py` | Chạy một cấu hình trong tiến trình riêng |
+| `resource_monitor.py` | Giám sát thời gian và RSS, dọn tiến trình |
+| `correctness.py` | Kiểm tra các cấu hình trên bàn cờ nhỏ |
+| `main_experiment.py` | Điều phối và lưu từng lượt benchmark |
+| `comparator.py` | Tổng hợp dữ liệu đã lưu |
+| `data_analysis.ipynb` | Kiểm tra dữ liệu, tạo bảng và biểu đồ |
+| `resume_experiment.py` | Tiếp tục thí nghiệm cụ thể bị gián đoạn |
 
-## Mô hình và quy ước
+## Mô hình
 
-Một nghiệm là danh sách `q` có độ dài N:
-
-```python
-q[row] = col
-```
-
-Chỉ số hàng và cột bắt đầu từ 0. Mỗi nghiệm phải được kiểm tra bằng
-`validate(q)`; các solver không cần trả về cùng một bàn cờ.
+Một nghiệm là danh sách `q`, trong đó `q[row] = col`.
+Hàng và cột được đánh số từ 0.
+Mọi nghiệm SAT được kiểm tra bằng cùng hàm `validate(q)`.
 
 ### SAT
 
-Biến ô tại hàng `row`, cột `col` có ID:
+Biến ô:
 
 ```python
-1 + row * n + col
+x[row, col] = 1 + row * n + col
 ```
 
-- Mỗi hàng và mỗi cột có ALO và AMO: đúng một hậu.
-- Mỗi đường chéo chỉ có AMO: nhiều nhất một hậu.
-- Biến phụ được cấp sau N² và không dùng chung giữa các nhóm.
-- Interface của mỗi encoder:
+- Hàng và cột: ALO và AMO, tức đúng một hậu.
+- Đường chéo: chỉ AMO.
+- Biến phụ được cấp liên tục sau N², không trùng giữa các nhóm.
+- Interface encoder:
 
 ```python
 encode_amo(variables, top_id) -> (clauses, new_top_id)
 ```
 
-Các phiên bản được triển khai:
-
-| Encoder | Quy tắc |
+| Encoder | Phiên bản |
 |---|---|
-| Binomial / Pairwise | Một clause cấm cùng đúng cho mỗi cặp biến |
-| Binary | Gán mã nhị phân riêng cho vị trí của mỗi biến trong nhóm |
-| Commander | Nhóm tối đa 3 biến; liên kết hai chiều với commander; AMO commander bằng đệ quy |
-| Product | Lưới hai chiều; đệ quy trên biến phụ hàng/cột; dùng pairwise khi nhóm có tối đa 4 biến |
-| Sequential Counter | Chuỗi biến phụ truyền thông tin về các biến đúng ở phía trước |
+| Binomial | Clause cấm cùng đúng cho mỗi cặp biến |
+| Binary | Mã nhị phân cho vị trí biến trong nhóm |
+| Commander | Nhóm tối đa 3 biến; liên kết hai chiều; đệ quy trên commander |
+| Product | Lưới hai chiều; đệ quy trên biến phụ; pairwise khi nhóm có tối đa 4 biến |
+| Sequential | Chuỗi biến phụ biểu diễn thông tin các biến đúng phía trước |
 
 ### CP và CP-SAT
 
-Dùng N biến nguyên `q[row]` trong miền từ 0 đến N − 1:
+N biến nguyên `q[row]` thuộc miền `[0, N−1]`, cùng ba ràng buộc:
 
 ```text
 AllDifferent(q[row])
@@ -166,148 +138,222 @@ AllDifferent(q[row] - row)
 
 ### MIP
 
-Dùng N² biến nhị phân theo ô:
+N² biến nhị phân theo ô:
 
 - Tổng mỗi hàng bằng 1.
 - Tổng mỗi cột bằng 1.
-- Tổng mỗi đường chéo không quá 1.
-- Mục tiêu là hằng 0; chỉ cần tìm nghiệm khả thi.
+- Tổng mỗi đường chéo có ít nhất hai ô không quá 1.
+- Mục tiêu hằng 0.
 
-Các mô hình không thêm ràng buộc phá đối xứng thủ công.
-Các cơ chế nội bộ của solver được giữ theo cấu hình thực tế của từng wrapper.
+Không thêm ràng buộc phá đối xứng thủ công.
+Các cơ chế nội bộ của solver được giữ theo cấu hình wrapper.
 
-## Môi trường và cài đặt
+## Cài đặt trên Windows
 
-Môi trường phát triển hiện tại: Windows, Python 3.12.10,
-virtual environment `.venv`.
+Môi trường thực nghiệm sử dụng Python 3.12.10 và `.venv`.
 
-Chạy từ thư mục gốc project:
+Từ thư mục gốc repository:
 
 ```powershell
+py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-Các phụ thuộc hiện tại:
+Để chạy notebook:
 
-```text
-python-sat==1.9.dev15
-pytest==9.1.1
-ortools==9.15.6755
-gurobipy==13.0.3
-psutil==7.2.2
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-analysis.txt
 ```
 
-Gurobi cần giấy phép phù hợp. Project sử dụng giấy phép Academic WLS.
+### Gurobi
 
-Phụ thuộc và engine CPLEX sẽ được bổ sung khi hoàn tất môi trường IBM.
-Cài thư viện `docplex` đơn lẻ chưa bảo đảm có CP Optimizer engine.
-Module CP Optimizer hỗ trợ biến môi trường `CPO_EXECUTABLE`
-để chỉ định đường dẫn executable.
+Cần giấy phép phù hợp để chạy mô hình lớn.
+Thực nghiệm sử dụng Academic WLS và cần kết nối internet.
 
-Không đưa file giấy phép, API key hoặc thông tin xác thực vào repository.
+File giấy phép được lưu ngoài repository.
+
+### IBM CPLEX và CP Optimizer
+
+Thực nghiệm sử dụng IBM ILOG CPLEX Optimization Studio 22.2,
+cài tại:
+
+```text
+C:\Program Files\IBM\ILOG\CPLEX_Studio222
+```
+
+Sau khi cài các Python package và có quyền sử dụng Studio,
+cấu hình engine cho môi trường ảo:
+
+```powershell
+.\.venv\Scripts\docplex.exe config --upgrade "C:\Program Files\IBM\ILOG\CPLEX_Studio222"
+```
+
+Chỉ định CP Optimizer cho terminal hiện tại:
+
+```powershell
+$env:CPO_EXECUTABLE = (Resolve-Path ".\.venv\Scripts\cpoptimizer.exe").Path
+```
+
+Cần thực hiện lại bước cấu hình engine nếu tạo lại `.venv`.
+Đường dẫn Studio có thể khác trên máy khác.
+
+Không đưa file giấy phép hoặc thông tin xác thực vào Git.
 
 ## Kiểm tra tính đúng
 
-### Kiểm tra encoder
+Kiểm tra encoder:
 
 ```powershell
 .\.venv\Scripts\python.exe -B -m pytest tests/test_encodings.py -q -p no:cacheprovider
 ```
 
-Bộ test kiểm tra:
-
-- AMO bằng vét cạn các phép gán biến gốc ở những nhóm nhỏ.
-- Product đệ quy với nhóm lớn hơn: không biến đúng, một biến đúng
-  và mọi cặp biến cùng đúng.
-- N-Queens với N = 1, 2, 3, 4, 5, 6, 8 trên cả hai SAT solver.
-- Mỗi nghiệm SAT được giải mã và kiểm tra độc lập.
-
-### Kiểm tra qua worker
-
-Mặc định chạy các cấu hình SAT, CP-SAT và Gurobi:
+Kiểm tra toàn bộ 14 cấu hình qua worker:
 
 ```powershell
-.\.venv\Scripts\python.exe -B -m src.evaluation.correctness
-```
-
-Nếu tất cả ca được chọn đều đạt, kết quả dự kiến là:
-
-```text
-Passed: 84/84
-Failed: 0; Skipped: 14
-```
-
-Chạy thêm CPLEX khi môi trường đã sẵn sàng:
-
-```powershell
+$env:CPO_EXECUTABLE = (Resolve-Path ".\.venv\Scripts\cpoptimizer.exe").Path
 .\.venv\Scripts\python.exe -B -m src.evaluation.correctness --include-cplex
 ```
 
-Khi đó có 98 ca kiểm tra. Các con số trên là số ca dự kiến,
-không phải tuyên bố tất cả đã chạy thành công.
+Các kích thước: `1, 2, 3, 4, 5, 6, 8`.
 
-`NOT_RUN/SKIP` không được tính là PASS. Timeout, lỗi giấy phép
-và lỗi thực thi không được coi là UNSAT.
-
-Kết quả được lưu trong:
+Kết quả đã lưu:
 
 ```text
-results/correctness/<id>/
-├── checks.jsonl
-├── summary.json
-└── runs/
+Passed: 98/98
+Failed: 0; Skipped: 0
 ```
 
-## Cấu hình pilot
+N=2 và N=3 phải UNSAT; các kích thước còn lại phải SAT
+với nghiệm hợp lệ.
 
-`configs/pilot.json` hiện khai báo:
+## Benchmark chính
+
+Cấu hình: `configs/main.json`.
 
 | Thông số | Giá trị |
 |---|---|
-| N | 16, 32, 64, 128 |
-| Số lần lặp | 1 |
-| Giới hạn toàn tiến trình mỗi lượt | 30 giây |
-| Ngưỡng giám sát RAM | 8192 MiB |
-| Cấu hình | 14, trong đó hai CPLEX đang tạm tắt |
+| N | 4, 8, 9, 16, 25, 27, 36, 49, 64, 81, 100, 125, 216, 343, 512, 729, 1000, 1331 |
+| Số cấu hình | 14 |
+| Số lần lặp | 3 |
+| Tổng số lượt | 756 |
+| Giới hạn toàn tiến trình | 100 giây/lượt |
+| Ngưỡng RSS lấy mẫu | 8192 MiB/lượt |
+| Chu kỳ lấy mẫu | 50 ms |
+| Chạy đồng thời | Một lượt tại một thời điểm |
+| Solver CP/MIP | Một worker/thread |
+| Seed | Mặc định của solver |
 
-Có 48 vị trí kết quả: 40 lượt được chọn chạy và 8 lượt ghi `NOT_RUN`.
+Đây là thông số thực nghiệm tự chọn.
 
-Đây là thông số pilot tự chọn, chưa phải cấu hình benchmark chính thức
-và không phải yêu cầu bắt buộc của đề bài.
+Chạy một thí nghiệm mới:
 
-Chưa chạy pilot cho đến khi hoàn thiện chương trình điều phối
-và kiểm tra cơ chế giới hạn tài nguyên.
+```powershell
+$env:CPO_EXECUTABLE = (Resolve-Path ".\.venv\Scripts\cpoptimizer.exe").Path
+.\.venv\Scripts\python.exe -B -m src.main_experiment --config configs/main.json
+```
 
-## Quy ước đo và lưu kết quả
+Mỗi lần gọi tạo một thư mục kết quả mới.
 
-- Chạy một cấu hình tại một thời điểm.
-- Mỗi lượt chạy trong tiến trình Python riêng.
-- Solver CP/MIP được cấu hình một worker/thread.
-- Hiện chưa đặt seed riêng; các solver dùng mặc định.
-- `build_s`: khoảng thời gian dựng mô hình theo wrapper.
-- `solve_s`: thời gian quanh lời gọi API giải, có thể gồm khởi động
-  engine, chuyển dữ liệu và presolve.
+Hiện `configs/pilot.json` có cùng nội dung với `main.json`;
+không dùng file này với kỳ vọng chạy thử nhanh.
+Cấu hình của các pilot trước được giữ trong thư mục kết quả tương ứng.
+
+## Kết quả đã hoàn thành
+
+Thí nghiệm chính:
+
+```text
+results/experiments/20261008T102037Z_10c488e7/
+```
+
+| Trạng thái | Số lượt |
+|---|---:|
+| SAT, nghiệm hợp lệ | 612 |
+| TIMEOUT | 101 |
+| MEMORY_LIMIT | 42 |
+| ERROR | 1 |
+| Tổng | 756 |
+
+Không thiếu hoặc trùng lượt chạy.
+Glucose3 + Commander và CPLEX CP đều giải thành công 54/54 lượt.
+
+Đây là kết quả của cấu hình, phiên bản và môi trường đã lưu;
+không phải khẳng định hiệu năng chung cho mọi máy hoặc mọi thiết lập.
+
+### Quy ước số đo
+
+- `build_s`: dựng mô hình theo wrapper.
+- `solve_s`: thời gian quanh lời gọi API; có thể gồm presolve,
+  chuyển dữ liệu và khởi động engine.
 - `solver_call_wall_s`: thời gian toàn bộ hàm solver.
-- `total_wall_s` trong kết quả worker: thời gian toàn bộ tiến trình,
-  gồm khởi động Python, import và dọn dẹp.
-- `peak_rss_mib`: đỉnh tổng RSS quan sát được của tiến trình và các
-  tiến trình con được phát hiện, lấy mẫu mỗi 50 ms.
-- Giám sát RAM bằng lấy mẫu không phải giới hạn cứng của hệ điều hành.
-- RSS giữa các tiến trình có thể tính trùng bộ nhớ dùng chung.
-- Mỗi lượt có thư mục riêng chứa `solver.log`, `result.json` và
-  `solver.json` nếu tiến trình con ghi được kết quả.
-- Kết quả của các phiên bản encoder khác nhau phải được phân biệt.
+- `total_wall_s`: toàn bộ tiến trình, gồm khởi động Python,
+  import, dựng mô hình, giải, xử lý kết quả và dọn dẹp.
+- `peak_rss_mib`: đỉnh tổng RSS quan sát được của cây tiến trình.
 
-Các trạng thái có thể gặp gồm `SAT`, `UNSAT`, `UNKNOWN`, `TIMEOUT`,
-`MEMORY_LIMIT`, `LICENSE_ERROR`, `INSTALL_ERROR`, `INVALID_MODEL`,
-`ERROR` và `NOT_RUN`.
+### Gián đoạn và giới hạn nghiên cứu
 
-## Công việc tiếp theo
+Sau 239 lượt đầu, thực nghiệm bị gián đoạn do áp lực bộ nhớ Windows.
+Paging file được cấu hình thêm trên ổ E và phần dọn tiến trình
+của bộ giám sát được sửa. Sau đó chạy tiếp 517 lượt.
 
-- Xác nhận lại bộ test sau khi chuyển sang Product đệ quy.
-- Hoàn thiện `main_experiment.py`.
-- Kiểm tra thực tế cơ chế timeout và dừng cây tiến trình.
-- Hoàn thiện `evaluation/comparator.py`.
-- Hoàn tất môi trường và kiểm tra hai solver CPLEX.
-- Chạy pilot, sau đó chốt cấu hình benchmark chính.
-- Tổng hợp kết quả, vẽ biểu đồ và viết báo cáo.
+Dấu vết phiên chạy được lưu qua `resume_session`
+và metadata trong `resume_backups/`.
+
+Một lượt CaDiCaL + Binary tại N=1000, repeat=1 kết thúc bất thường.
+Bản ghi ERROR được giữ nguyên.
+
+Giới hạn cần xét khi diễn giải:
+
+- Chỉ ba lần lặp mỗi nhóm, seed mặc định.
+- Giám sát RSS theo chu kỳ có thể bỏ sót đỉnh ngắn.
+- RSS có thể tính trùng bộ nhớ dùng chung giữa tiến trình.
+- Ngưỡng RAM không phải giới hạn cứng do hệ điều hành áp đặt.
+- Môi trường thay đổi giữa hai giai đoạn chạy.
+- Thống kê thời gian/RAM chỉ xét lượt thành công;
+  phải đọc cùng số lượt thất bại.
+
+Script `resume_experiment.py` hiện gắn với đường dẫn thí nghiệm
+trên máy phát triển. Cần kiểm tra đường dẫn và phiên bản mã
+trước khi dùng trên máy khác.
+
+## Tổng hợp và notebook
+
+Tổng hợp thí nghiệm chính:
+
+```powershell
+.\.venv\Scripts\python.exe -B -m src.evaluation.comparator "results/experiments/20261008T102037Z_10c488e7"
+```
+
+Lệnh tạo `analysis.json` và `analysis.csv`.
+
+Mở `notebooks/data_analysis.ipynb` trong VS Code,
+chọn kernel của `.venv`, rồi Run All.
+
+Trên máy khác, sửa biến `ROOT` trong notebook cho đúng đường dẫn.
+
+Notebook xuất vào `notebook_analysis/` của thí nghiệm:
+
+| File | Nội dung |
+|---|---|
+| `status_summary.csv` | Số lượt theo trạng thái và tỷ lệ thành công |
+| `group_statistics.csv` | Median, IQR và số mẫu từng nhóm |
+| `errors.csv` | Các lượt ERROR |
+| `success_counts.csv` | Số lượt thành công theo N/phương pháp |
+| `cnf_sizes.csv` | Kích thước 90 mô hình SAT |
+| `runtime.png/pdf` | Median thời gian và vùng Q1–Q3 |
+| `memory.png/pdf` | Median RAM và vùng Q1–Q3 |
+| `success_counts.png/pdf` | Heatmap số lượt thành công |
+| `cnf_sizes.png/pdf` | Số biến và clause |
+
+Q1–Q3 không phải khoảng tin cậy.
+Nhóm không có lượt thành công để trống số đo thời gian/RAM.
+
+Kích thước CNF được tính bằng cách cộng chi phí AMO theo độ dài nhóm,
+không dựng toàn bộ CNF lớn. Kết quả khớp 420 bản ghi có thông số CNF.
+Đây là kích thước trước tiền xử lý của solver.
+
+## Công việc còn lại
+
+- Viết báo cáo theo mẫu cas-sc.
+- Đưa bảng, hình và giới hạn thực nghiệm vào báo cáo.
+- Hoàn thiện trích dẫn và mục Data Availability.
