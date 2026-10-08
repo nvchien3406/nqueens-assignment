@@ -1,0 +1,19 @@
+{
+  "status": "TIMEOUT",
+  "q": null,
+  "valid": null,
+  "solver_call_wall_s": null,
+  "run_id": "bc1ff112c5654776b90e978f64c286e2",
+  "n": 1000,
+  "method": "glucose3:product",
+  "solver": "glucose3",
+  "encoding": "product",
+  "threads": 1,
+  "wall_limit_s": 100,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\experiments\\20261008T102037Z_10c488e7\\runs\\bc1ff112c5654776b90e978f64c286e2\\solver.log",
+  "exit_code": 1,
+  "total_wall_s": 100.29145489999974,
+  "peak_rss_mib": 2347.6953125,
+  "memory_sample_s": 0.05
+}

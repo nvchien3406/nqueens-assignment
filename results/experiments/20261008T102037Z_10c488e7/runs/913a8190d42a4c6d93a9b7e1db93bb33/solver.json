@@ -1,0 +1,21 @@
+{
+  "n": 4,
+  "encoding": null,
+  "solver": "cplex_cp",
+  "status": "SAT",
+  "native_status": "Feasible",
+  "stop_cause": "SearchHasNotBeenStopped",
+  "q": [
+    1,
+    3,
+    0,
+    2
+  ],
+  "valid": true,
+  "build_s": 0.00045649999992747325,
+  "solve_s": 0.021840000000111104,
+  "total_wall_s": 0.0223215999999411,
+  "native_variables": 4,
+  "native_constraints": 3,
+  "threads": 1
+}

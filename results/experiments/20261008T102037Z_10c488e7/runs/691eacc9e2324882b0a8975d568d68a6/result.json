@@ -1,0 +1,30 @@
+{
+  "n": 4,
+  "encoding": "product",
+  "solver": "cadical195",
+  "status": "SAT",
+  "q": [
+    2,
+    0,
+    3,
+    1
+  ],
+  "valid": true,
+  "build_s": 0.0006274000006669667,
+  "solve_s": 3.0899999728717376e-05,
+  "base_variables": 16,
+  "aux_variables": 0,
+  "max_variable_id": 16,
+  "cnf_clauses": 84,
+  "solver_call_wall_s": 0.0006873000002087792,
+  "run_id": "691eacc9e2324882b0a8975d568d68a6",
+  "method": "cadical195:product",
+  "threads": 1,
+  "wall_limit_s": 100,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\experiments\\20261008T102037Z_10c488e7\\runs\\691eacc9e2324882b0a8975d568d68a6\\solver.log",
+  "exit_code": 0,
+  "total_wall_s": 0.18444180000005872,
+  "peak_rss_mib": 30.1328125,
+  "memory_sample_s": 0.05
+}

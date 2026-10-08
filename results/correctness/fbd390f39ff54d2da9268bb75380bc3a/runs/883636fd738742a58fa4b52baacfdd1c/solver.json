@@ -1,0 +1,15 @@
+{
+  "n": 3,
+  "encoding": "commander",
+  "solver": "glucose3",
+  "status": "UNSAT",
+  "q": null,
+  "valid": null,
+  "build_s": 0.0001409000251442194,
+  "solve_s": 2.5999965146183968e-05,
+  "total_wall_s": 0.0001984999980777502,
+  "base_variables": 9,
+  "aux_variables": 0,
+  "max_variable_id": 9,
+  "cnf_clauses": 34
+}

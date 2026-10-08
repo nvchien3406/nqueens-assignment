@@ -1,7 +1,7 @@
 {
-  "sizes": [16, 32, 64, 128],
-  "repeats": 1,
-  "wall_limit_s": 30,
+  "sizes": [4, 8, 9, 16, 25, 27, 36, 49, 64, 81, 100, 125, 216, 343, 512, 729, 1000, 1331],
+  "repeats": 3,
+  "wall_limit_s": 100,
   "memory_limit_mib": 8192,
   "methods": [
     "glucose3:binomial",
@@ -19,8 +19,5 @@
     "cplex_cp",
     "cplex_mip"
   ],
-  "disabled_methods": {
-    "cplex_cp": "Chờ hoàn tất cài đặt và giấy phép IBM",
-    "cplex_mip": "Chờ hoàn tất cài đặt và giấy phép IBM"
-  }
+  "disabled_methods": {}
 }

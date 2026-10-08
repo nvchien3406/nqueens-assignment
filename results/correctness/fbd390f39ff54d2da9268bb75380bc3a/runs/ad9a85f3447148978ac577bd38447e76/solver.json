@@ -1,0 +1,16 @@
+{
+  "n": 3,
+  "encoding": null,
+  "solver": "cplex_mip",
+  "status": "UNSAT",
+  "native_status": "integer infeasible",
+  "native_status_code": 103,
+  "q": null,
+  "valid": null,
+  "build_s": 0.010486999992281199,
+  "solve_s": 0.002052099909633398,
+  "native_variables": 9,
+  "native_constraints": 12,
+  "threads": 1,
+  "total_wall_s": 0.012829100014641881
+}

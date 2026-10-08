@@ -1,0 +1,19 @@
+{
+  "status": "TIMEOUT",
+  "q": null,
+  "valid": null,
+  "solver_call_wall_s": null,
+  "run_id": "6feed6a8c1c541fcbafa4e6fad122e98",
+  "n": 216,
+  "method": "glucose3:sequential",
+  "solver": "glucose3",
+  "encoding": "sequential",
+  "threads": 1,
+  "wall_limit_s": 100,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\experiments\\20261008T102037Z_10c488e7\\runs\\6feed6a8c1c541fcbafa4e6fad122e98\\solver.log",
+  "exit_code": 15,
+  "total_wall_s": 100.03727949992754,
+  "peak_rss_mib": 561.5703125,
+  "memory_sample_s": 0.05
+}

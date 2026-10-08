@@ -1,0 +1,15 @@
+{
+  "n": 3,
+  "encoding": "sequential",
+  "solver": "cadical195",
+  "status": "UNSAT",
+  "q": null,
+  "valid": null,
+  "build_s": 0.0007113001774996519,
+  "solve_s": 7.029995322227478e-05,
+  "total_wall_s": 0.0007990000303834677,
+  "base_variables": 9,
+  "aux_variables": 20,
+  "max_variable_id": 29,
+  "cnf_clauses": 54
+}

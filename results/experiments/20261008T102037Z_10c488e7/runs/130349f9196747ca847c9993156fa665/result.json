@@ -1,0 +1,19 @@
+{
+  "status": "TIMEOUT",
+  "q": null,
+  "valid": null,
+  "solver_call_wall_s": null,
+  "run_id": "130349f9196747ca847c9993156fa665",
+  "n": 729,
+  "method": "cplex_mip",
+  "solver": "cplex_mip",
+  "encoding": null,
+  "threads": 1,
+  "wall_limit_s": 100,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\experiments\\20261008T102037Z_10c488e7\\runs\\130349f9196747ca847c9993156fa665\\solver.log",
+  "exit_code": 1,
+  "total_wall_s": 100.20649169999888,
+  "peak_rss_mib": 1048.0390625,
+  "memory_sample_s": 0.05
+}

@@ -1,0 +1,30 @@
+{
+  "n": 4,
+  "encoding": null,
+  "solver": "cplex_cp",
+  "status": "SAT",
+  "native_status": "Feasible",
+  "stop_cause": "SearchHasNotBeenStopped",
+  "q": [
+    1,
+    3,
+    0,
+    2
+  ],
+  "valid": true,
+  "build_s": 0.00045649999992747325,
+  "solve_s": 0.021840000000111104,
+  "native_variables": 4,
+  "native_constraints": 3,
+  "threads": 1,
+  "solver_call_wall_s": 0.0223215999999411,
+  "run_id": "913a8190d42a4c6d93a9b7e1db93bb33",
+  "method": "cplex_cp",
+  "wall_limit_s": 100,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\experiments\\20261008T102037Z_10c488e7\\runs\\913a8190d42a4c6d93a9b7e1db93bb33\\solver.log",
+  "exit_code": 0,
+  "total_wall_s": 0.7496664999998757,
+  "peak_rss_mib": 88.77734375,
+  "memory_sample_s": 0.05
+}

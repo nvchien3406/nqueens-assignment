@@ -1,0 +1,19 @@
+{
+  "status": "TIMEOUT",
+  "q": null,
+  "valid": null,
+  "solver_call_wall_s": null,
+  "run_id": "006e343b293a42eb8269c59c0e0b782e",
+  "n": 1000,
+  "method": "cadical195:product",
+  "solver": "cadical195",
+  "encoding": "product",
+  "threads": 1,
+  "wall_limit_s": 100,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\experiments\\20261008T102037Z_10c488e7\\runs\\006e343b293a42eb8269c59c0e0b782e\\solver.log",
+  "exit_code": 1,
+  "total_wall_s": 100.31276160000016,
+  "peak_rss_mib": 3135.71484375,
+  "memory_sample_s": 0.05
+}

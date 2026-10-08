@@ -1,0 +1,32 @@
+{
+  "n": 16,
+  "encoding": "sequential",
+  "solver": "glucose3",
+  "status": "SAT",
+  "q": [
+    9,
+    1,
+    4,
+    10,
+    15,
+    2,
+    14,
+    11,
+    7,
+    3,
+    6,
+    12,
+    5,
+    8,
+    0,
+    13
+  ],
+  "valid": true,
+  "build_s": 0.002499300055205822,
+  "solve_s": 0.0061530000530183315,
+  "total_wall_s": 0.008946500020101666,
+  "base_variables": 256,
+  "aux_variables": 930,
+  "max_variable_id": 1186,
+  "cnf_clauses": 2732
+}

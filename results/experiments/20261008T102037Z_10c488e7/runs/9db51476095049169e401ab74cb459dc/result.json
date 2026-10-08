@@ -1,0 +1,21 @@
+{
+  "status": "MEMORY_LIMIT",
+  "q": null,
+  "valid": null,
+  "error_type": "MemoryError",
+  "error": "",
+  "solver_call_wall_s": null,
+  "run_id": "9db51476095049169e401ab74cb459dc",
+  "n": 343,
+  "method": "glucose3:binomial",
+  "solver": "glucose3",
+  "encoding": "binomial",
+  "threads": 1,
+  "wall_limit_s": 100,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\experiments\\20261008T102037Z_10c488e7\\runs\\9db51476095049169e401ab74cb459dc\\solver.log",
+  "exit_code": 0,
+  "total_wall_s": 33.391552600078285,
+  "peak_rss_mib": 7867.65625,
+  "memory_sample_s": 0.05
+}

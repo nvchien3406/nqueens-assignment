@@ -1,0 +1,17 @@
+{
+  "n": 1,
+  "encoding": "binomial",
+  "solver": "cadical195",
+  "status": "SAT",
+  "q": [
+    0
+  ],
+  "valid": true,
+  "build_s": 0.018032100051641464,
+  "solve_s": 0.0002761001233011484,
+  "total_wall_s": 0.018403399968519807,
+  "base_variables": 1,
+  "aux_variables": 0,
+  "max_variable_id": 1,
+  "cnf_clauses": 2
+}

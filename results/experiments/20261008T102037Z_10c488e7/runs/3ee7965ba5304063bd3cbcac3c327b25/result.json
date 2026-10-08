@@ -1,0 +1,19 @@
+{
+  "status": "MEMORY_LIMIT",
+  "q": null,
+  "valid": null,
+  "solver_call_wall_s": null,
+  "run_id": "3ee7965ba5304063bd3cbcac3c327b25",
+  "n": 1000,
+  "method": "cadical195:binary",
+  "solver": "cadical195",
+  "encoding": "binary",
+  "threads": 1,
+  "wall_limit_s": 100,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\experiments\\20261008T102037Z_10c488e7\\runs\\3ee7965ba5304063bd3cbcac3c327b25\\solver.log",
+  "exit_code": 1,
+  "total_wall_s": 32.72132889999921,
+  "peak_rss_mib": 8205.33203125,
+  "memory_sample_s": 0.05
+}

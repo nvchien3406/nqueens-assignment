@@ -1,0 +1,24 @@
+{
+  "n": 8,
+  "encoding": "sequential",
+  "solver": "cadical195",
+  "status": "SAT",
+  "q": [
+    5,
+    2,
+    4,
+    6,
+    0,
+    3,
+    1,
+    7
+  ],
+  "valid": true,
+  "build_s": 0.0011453000001893088,
+  "solve_s": 0.00018060000002151355,
+  "total_wall_s": 0.0014040000000932196,
+  "base_variables": 64,
+  "aux_variables": 210,
+  "max_variable_id": 274,
+  "cnf_clauses": 604
+}

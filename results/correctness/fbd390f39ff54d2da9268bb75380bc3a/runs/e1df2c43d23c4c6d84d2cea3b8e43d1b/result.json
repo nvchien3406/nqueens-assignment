@@ -1,0 +1,31 @@
+{
+  "n": 6,
+  "encoding": null,
+  "solver": "gurobi_mip",
+  "status": "SAT",
+  "native_status": 2,
+  "q": [
+    4,
+    2,
+    0,
+    5,
+    3,
+    1
+  ],
+  "valid": true,
+  "build_s": 0.0065212000627070665,
+  "solve_s": 0.0025131001602858305,
+  "native_variables": 36,
+  "native_constraints": 30,
+  "threads": 1,
+  "solver_call_wall_s": 0.022798300022259355,
+  "run_id": "e1df2c43d23c4c6d84d2cea3b8e43d1b",
+  "method": "gurobi_mip",
+  "wall_limit_s": 30,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\correctness\\fbd390f39ff54d2da9268bb75380bc3a\\runs\\e1df2c43d23c4c6d84d2cea3b8e43d1b\\solver.log",
+  "exit_code": 0,
+  "total_wall_s": 0.39361510006710887,
+  "peak_rss_mib": 37.9453125,
+  "memory_sample_s": 0.05
+}

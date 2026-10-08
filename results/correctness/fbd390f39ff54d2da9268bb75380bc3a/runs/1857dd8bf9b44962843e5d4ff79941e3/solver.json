@@ -1,0 +1,16 @@
+{
+  "n": 3,
+  "encoding": null,
+  "solver": "cplex_cp",
+  "status": "UNSAT",
+  "native_status": "Infeasible",
+  "stop_cause": "SearchHasNotBeenStopped",
+  "q": null,
+  "valid": null,
+  "build_s": 0.000589500181376934,
+  "solve_s": 0.03449230012483895,
+  "total_wall_s": 0.035088600125163794,
+  "native_variables": 3,
+  "native_constraints": 3,
+  "threads": 1
+}

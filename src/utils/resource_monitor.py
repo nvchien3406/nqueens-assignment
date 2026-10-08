@@ -9,32 +9,66 @@ import psutil
 
 
 def stop_tree(root, known):
-    """Dừng tiến trình gốc và các tiến trình con đã tìm thấy."""
+    """Dọn tiến trình ngay cả khi không liệt kê được cây tiến trình."""
     targets = {p.pid: p for p in known}
 
     if root is not None:
-        try:
-            # Tạm dừng tiến trình gốc trước khi thu thập các con.
-            root.suspend()
-            targets[root.pid] = root
+        targets[root.pid] = root
 
+        try:
             for child in root.children(recursive=True):
                 targets[child.pid] = child
-        except psutil.NoSuchProcess:
+        except (psutil.Error, OSError):
+            # Vẫn giữ các tiến trình đã biết để dọn bên dưới.
             pass
 
-    for process in reversed(list(targets.values())):
+        if os.name == "nt":
+            try:
+                if root.is_running():
+                    # Phương án dự phòng của Windows.
+                    subprocess.run(
+                        [
+                            "taskkill",
+                            "/PID", str(root.pid),
+                            "/T", "/F",
+                        ],
+                        stdin=subprocess.DEVNULL,
+                        stdout=subprocess.DEVNULL,
+                        stderr=subprocess.DEVNULL,
+                        creationflags=subprocess.CREATE_NO_WINDOW,
+                        timeout=10,
+                        check=False,
+                    )
+            except (
+                psutil.Error,
+                OSError,
+                subprocess.SubprocessError,
+            ):
+                pass
+
+    # Cố dừng từng tiến trình, dù taskkill hoặc bước liệt kê thất bại.
+    for item in reversed(list(targets.values())):
         try:
-            process.kill()
+            item.kill()
         except psutil.NoSuchProcess:
             pass
+        except (psutil.Error, OSError):
+            # Kiểm tra lại sau khi đã thử với tất cả tiến trình.
+            pass
 
-    _, alive = psutil.wait_procs(
-        list(targets.values()),
-        timeout=3,
-    )
+    alive = []
+    for item in targets.values():
+        try:
+            item.wait(timeout=3)
+        except psutil.NoSuchProcess:
+            pass
+        except (psutil.Error, OSError):
+            alive.append(item.pid)
+
     if alive:
-        raise RuntimeError("Không dừng được toàn bộ tiến trình solver")
+        raise RuntimeError(
+            f"Chưa xác nhận đã dừng các PID: {sorted(set(alive))}"
+        )
 
 
 def run_process(command, cwd, log_path, wall_limit_s, memory_limit_mib):
@@ -101,13 +135,14 @@ def run_process(command, cwd, log_path, wall_limit_s, memory_limit_mib):
 
                 sleep(0.05)
         finally:
-            # Cũng dọn tiến trình khi người dùng nhấn Ctrl+C.
-            stop_tree(root, known.values())
+            try:
+                stop_tree(root, known.values())
+            finally:
+                # Luôn thử dọn tiến trình gốc, kể cả khi stop_tree lỗi.
+                if process.poll() is None:
+                    process.kill()
 
-            if process.poll() is None:
-                process.kill()
-
-            process.wait()
+                process.wait(timeout=10)
 
     return {
         "limit_status": limit_status,

@@ -1,0 +1,19 @@
+{
+  "status": "MEMORY_LIMIT",
+  "q": null,
+  "valid": null,
+  "solver_call_wall_s": null,
+  "run_id": "84bb0c2141e5470ba56eef266e5643e3",
+  "n": 1000,
+  "method": "cadical195:binomial",
+  "solver": "cadical195",
+  "encoding": "binomial",
+  "threads": 1,
+  "wall_limit_s": 100,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\experiments\\20261008T102037Z_10c488e7\\runs\\84bb0c2141e5470ba56eef266e5643e3\\solver.log",
+  "exit_code": 1,
+  "total_wall_s": 26.824022499999046,
+  "peak_rss_mib": 8232.1015625,
+  "memory_sample_s": 0.05
+}

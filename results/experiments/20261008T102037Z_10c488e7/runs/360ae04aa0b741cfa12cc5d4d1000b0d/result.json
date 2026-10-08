@@ -1,0 +1,19 @@
+{
+  "status": "MEMORY_LIMIT",
+  "q": null,
+  "valid": null,
+  "solver_call_wall_s": null,
+  "run_id": "360ae04aa0b741cfa12cc5d4d1000b0d",
+  "n": 1331,
+  "method": "glucose3:binary",
+  "solver": "glucose3",
+  "encoding": "binary",
+  "threads": 1,
+  "wall_limit_s": 100,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\experiments\\20261008T102037Z_10c488e7\\runs\\360ae04aa0b741cfa12cc5d4d1000b0d\\solver.log",
+  "exit_code": 1,
+  "total_wall_s": 33.79936169999928,
+  "peak_rss_mib": 8197.359375,
+  "memory_sample_s": 0.05
+}

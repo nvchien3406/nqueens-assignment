@@ -1,0 +1,32 @@
+{
+  "n": 6,
+  "encoding": null,
+  "solver": "cplex_mip",
+  "status": "SAT",
+  "native_status": "integer optimal solution",
+  "native_status_code": 101,
+  "q": [
+    2,
+    5,
+    1,
+    4,
+    0,
+    3
+  ],
+  "valid": true,
+  "build_s": 0.010870700003579259,
+  "solve_s": 0.0036814999766647816,
+  "native_variables": 36,
+  "native_constraints": 30,
+  "threads": 1,
+  "solver_call_wall_s": 0.014944100053980947,
+  "run_id": "9cac334f8bbd46ee87865b21e75e9d55",
+  "method": "cplex_mip",
+  "wall_limit_s": 30,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\correctness\\fbd390f39ff54d2da9268bb75380bc3a\\runs\\9cac334f8bbd46ee87865b21e75e9d55\\solver.log",
+  "exit_code": 0,
+  "total_wall_s": 1.680186599958688,
+  "peak_rss_mib": 89.7265625,
+  "memory_sample_s": 0.05
+}

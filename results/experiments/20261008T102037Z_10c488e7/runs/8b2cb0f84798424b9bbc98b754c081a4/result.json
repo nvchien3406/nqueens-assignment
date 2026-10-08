@@ -1,0 +1,19 @@
+{
+  "status": "TIMEOUT",
+  "q": null,
+  "valid": null,
+  "solver_call_wall_s": null,
+  "run_id": "8b2cb0f84798424b9bbc98b754c081a4",
+  "n": 729,
+  "method": "cp_sat",
+  "solver": "cp_sat",
+  "encoding": null,
+  "threads": 1,
+  "wall_limit_s": 100,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\experiments\\20261008T102037Z_10c488e7\\runs\\8b2cb0f84798424b9bbc98b754c081a4\\solver.log",
+  "exit_code": 1,
+  "total_wall_s": 100.22870839999996,
+  "peak_rss_mib": 144.53515625,
+  "memory_sample_s": 0.05
+}

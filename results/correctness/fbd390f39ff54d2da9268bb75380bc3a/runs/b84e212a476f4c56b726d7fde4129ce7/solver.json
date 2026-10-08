@@ -1,0 +1,21 @@
+{
+  "n": 4,
+  "encoding": null,
+  "solver": "cplex_mip",
+  "status": "SAT",
+  "native_status": "integer optimal solution",
+  "native_status_code": 101,
+  "q": [
+    2,
+    0,
+    3,
+    1
+  ],
+  "valid": true,
+  "build_s": 0.013364700134843588,
+  "solve_s": 0.003364600008353591,
+  "native_variables": 16,
+  "native_constraints": 18,
+  "threads": 1,
+  "total_wall_s": 0.017154800007119775
+}

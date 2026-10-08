@@ -1,0 +1,24 @@
+{
+  "n": 8,
+  "encoding": "commander",
+  "solver": "glucose3",
+  "status": "SAT",
+  "q": [
+    2,
+    4,
+    6,
+    0,
+    3,
+    1,
+    7,
+    5
+  ],
+  "valid": true,
+  "build_s": 0.000600099999928716,
+  "solve_s": 0.0001427999998213636,
+  "total_wall_s": 0.0008127999999487656,
+  "base_variables": 64,
+  "aux_variables": 90,
+  "max_variable_id": 154,
+  "cnf_clauses": 634
+}

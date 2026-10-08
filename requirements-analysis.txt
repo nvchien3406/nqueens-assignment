@@ -1,0 +1,4 @@
+-r requirements.txt
+pandas==3.0.6
+matplotlib==3.11.2
+ipykernel==7.4.0

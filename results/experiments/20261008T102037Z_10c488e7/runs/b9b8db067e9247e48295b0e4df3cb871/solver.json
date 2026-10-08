@@ -1,0 +1,7 @@
+{
+  "status": "MEMORY_LIMIT",
+  "q": null,
+  "valid": null,
+  "error_type": "MemoryError",
+  "error": "Solver ran out of addressable memory (int32 allocator limit exceeded)"
+}

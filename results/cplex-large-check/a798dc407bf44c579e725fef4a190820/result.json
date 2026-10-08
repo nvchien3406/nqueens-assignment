@@ -1,0 +1,19 @@
+{
+  "status": "TIMEOUT",
+  "q": null,
+  "valid": null,
+  "solver_call_wall_s": null,
+  "run_id": "a798dc407bf44c579e725fef4a190820",
+  "n": 1331,
+  "method": "cplex_mip",
+  "solver": "cplex_mip",
+  "encoding": null,
+  "threads": 1,
+  "wall_limit_s": 100,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\cplex-large-check\\a798dc407bf44c579e725fef4a190820\\solver.log",
+  "exit_code": 15,
+  "total_wall_s": 100.21757739991881,
+  "peak_rss_mib": 3231.78125,
+  "memory_sample_s": 0.05
+}

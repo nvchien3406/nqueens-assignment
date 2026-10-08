@@ -1,0 +1,19 @@
+{
+  "status": "TIMEOUT",
+  "q": null,
+  "valid": null,
+  "solver_call_wall_s": null,
+  "run_id": "300aca33ea7f4bd29dca2c6388133632",
+  "n": 1000,
+  "method": "gurobi_mip",
+  "solver": "gurobi_mip",
+  "encoding": null,
+  "threads": 1,
+  "wall_limit_s": 100,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\experiments\\20261008T102037Z_10c488e7\\runs\\300aca33ea7f4bd29dca2c6388133632\\solver.log",
+  "exit_code": 1,
+  "total_wall_s": 100.23331469999994,
+  "peak_rss_mib": 1681.73046875,
+  "memory_sample_s": 0.05
+}

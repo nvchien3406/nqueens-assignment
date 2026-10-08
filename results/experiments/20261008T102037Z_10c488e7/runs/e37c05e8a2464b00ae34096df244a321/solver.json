@@ -1,0 +1,20 @@
+{
+  "n": 4,
+  "encoding": null,
+  "solver": "gurobi_mip",
+  "status": "SAT",
+  "native_status": 2,
+  "q": [
+    2,
+    0,
+    3,
+    1
+  ],
+  "valid": true,
+  "build_s": 0.01061559999993733,
+  "solve_s": 0.0019644999999854917,
+  "native_variables": 16,
+  "native_constraints": 18,
+  "threads": 1,
+  "total_wall_s": 0.025782200000094235
+}

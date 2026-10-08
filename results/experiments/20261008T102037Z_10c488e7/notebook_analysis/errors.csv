@@ -1,0 +1,2 @@
+﻿n,method,repeat,error,exit_code,log_path
+1000,cadical195:binary,1,Tiến trình lỗi; xem solver.log,3221226505,E:\nqueens-assignment\results\experiments\20261008T102037Z_10c488e7\runs\8434701e4c7449ecbe0bc40bbf0b6ed9\solver.log

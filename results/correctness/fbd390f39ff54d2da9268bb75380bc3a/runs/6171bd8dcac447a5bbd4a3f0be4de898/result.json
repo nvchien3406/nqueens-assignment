@@ -1,0 +1,32 @@
+{
+  "n": 6,
+  "encoding": "commander",
+  "solver": "glucose3",
+  "status": "SAT",
+  "q": [
+    2,
+    5,
+    1,
+    4,
+    0,
+    3
+  ],
+  "valid": true,
+  "build_s": 0.000969399930909276,
+  "solve_s": 0.0002741999924182892,
+  "base_variables": 36,
+  "aux_variables": 44,
+  "max_variable_id": 80,
+  "cnf_clauses": 326,
+  "solver_call_wall_s": 0.0014402999076992273,
+  "run_id": "6171bd8dcac447a5bbd4a3f0be4de898",
+  "method": "glucose3:commander",
+  "threads": 1,
+  "wall_limit_s": 30,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\correctness\\fbd390f39ff54d2da9268bb75380bc3a\\runs\\6171bd8dcac447a5bbd4a3f0be4de898\\solver.log",
+  "exit_code": 0,
+  "total_wall_s": 0.2617292001377791,
+  "peak_rss_mib": 33.57421875,
+  "memory_sample_s": 0.05
+}

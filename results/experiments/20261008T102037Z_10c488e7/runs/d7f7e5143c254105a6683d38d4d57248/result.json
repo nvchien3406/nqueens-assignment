@@ -1,0 +1,30 @@
+{
+  "n": 4,
+  "encoding": "binomial",
+  "solver": "cadical195",
+  "status": "SAT",
+  "q": [
+    2,
+    0,
+    3,
+    1
+  ],
+  "valid": true,
+  "build_s": 0.0007014000000253873,
+  "solve_s": 3.670000000965956e-05,
+  "base_variables": 16,
+  "aux_variables": 0,
+  "max_variable_id": 16,
+  "cnf_clauses": 84,
+  "solver_call_wall_s": 0.0013185000000248692,
+  "run_id": "d7f7e5143c254105a6683d38d4d57248",
+  "method": "cadical195:binomial",
+  "threads": 1,
+  "wall_limit_s": 100,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\experiments\\20261008T102037Z_10c488e7\\runs\\d7f7e5143c254105a6683d38d4d57248\\solver.log",
+  "exit_code": 0,
+  "total_wall_s": 0.1832296000000042,
+  "peak_rss_mib": 31.4140625,
+  "memory_sample_s": 0.05
+}

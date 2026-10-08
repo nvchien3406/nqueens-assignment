@@ -1,0 +1,21 @@
+{
+  "status": "MEMORY_LIMIT",
+  "q": null,
+  "valid": null,
+  "error_type": "MemoryError",
+  "error": "Solver ran out of addressable memory (int32 allocator limit exceeded)",
+  "solver_call_wall_s": null,
+  "run_id": "b9b8db067e9247e48295b0e4df3cb871",
+  "n": 1000,
+  "method": "glucose3:binary",
+  "solver": "glucose3",
+  "encoding": "binary",
+  "threads": 1,
+  "wall_limit_s": 100,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\experiments\\20261008T102037Z_10c488e7\\runs\\b9b8db067e9247e48295b0e4df3cb871\\solver.log",
+  "exit_code": 0,
+  "total_wall_s": 41.2782475000713,
+  "peak_rss_mib": 7269.6171875,
+  "memory_sample_s": 0.05
+}

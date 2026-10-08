@@ -1,0 +1,15 @@
+{
+  "n": 2,
+  "encoding": "sequential",
+  "solver": "glucose3",
+  "status": "UNSAT",
+  "q": null,
+  "valid": null,
+  "build_s": 9.869993664324284e-05,
+  "solve_s": 2.050003968179226e-05,
+  "total_wall_s": 0.0001526998821645975,
+  "base_variables": 4,
+  "aux_variables": 6,
+  "max_variable_id": 10,
+  "cnf_clauses": 16
+}

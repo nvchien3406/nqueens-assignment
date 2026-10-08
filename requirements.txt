@@ -3,3 +3,5 @@ pytest==9.1.1
 ortools==9.15.6755
 gurobipy==13.0.3
 psutil==7.2.2
+docplex==2.32.264
+cplex==22.2.0.1
