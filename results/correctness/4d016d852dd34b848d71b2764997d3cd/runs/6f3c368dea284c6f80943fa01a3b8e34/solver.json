@@ -1,0 +1,24 @@
+{
+  "n": 8,
+  "encoding": "sequential",
+  "solver": "glucose3",
+  "status": "SAT",
+  "q": [
+    3,
+    6,
+    4,
+    1,
+    5,
+    0,
+    2,
+    7
+  ],
+  "valid": true,
+  "build_s": 0.0004711998626589775,
+  "solve_s": 9.229988791048527e-05,
+  "total_wall_s": 0.0006412998773157597,
+  "base_variables": 64,
+  "aux_variables": 210,
+  "max_variable_id": 274,
+  "cnf_clauses": 604
+}

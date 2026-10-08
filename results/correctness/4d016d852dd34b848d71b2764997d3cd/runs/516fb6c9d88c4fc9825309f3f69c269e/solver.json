@@ -1,0 +1,17 @@
+{
+  "n": 1,
+  "encoding": null,
+  "solver": "cp_sat",
+  "status": "SAT",
+  "native_status": "OPTIMAL",
+  "q": [
+    0
+  ],
+  "valid": true,
+  "build_s": 0.013060300145298243,
+  "solve_s": 0.003522999817505479,
+  "total_wall_s": 0.016646600095555186,
+  "native_variables": 1,
+  "native_constraints": 3,
+  "threads": 1
+}

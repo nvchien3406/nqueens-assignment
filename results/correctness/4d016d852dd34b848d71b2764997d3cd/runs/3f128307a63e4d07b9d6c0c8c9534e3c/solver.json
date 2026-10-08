@@ -1,0 +1,15 @@
+{
+  "n": 3,
+  "encoding": null,
+  "solver": "gurobi_mip",
+  "status": "UNSAT",
+  "native_status": 3,
+  "q": null,
+  "valid": null,
+  "build_s": 0.004935200093314052,
+  "solve_s": 0.0023864000104367733,
+  "native_variables": 9,
+  "native_constraints": 12,
+  "threads": 1,
+  "total_wall_s": 0.020812599919736385
+}

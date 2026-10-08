@@ -1,0 +1,15 @@
+{
+  "n": 3,
+  "encoding": "binomial",
+  "solver": "glucose3",
+  "status": "UNSAT",
+  "q": null,
+  "valid": null,
+  "build_s": 0.00016779988072812557,
+  "solve_s": 3.260001540184021e-05,
+  "total_wall_s": 0.00025289994664490223,
+  "base_variables": 9,
+  "aux_variables": 0,
+  "max_variable_id": 9,
+  "cnf_clauses": 34
+}

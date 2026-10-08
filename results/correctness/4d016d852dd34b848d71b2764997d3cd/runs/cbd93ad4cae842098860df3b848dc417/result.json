@@ -1,0 +1,32 @@
+{
+  "n": 6,
+  "encoding": "sequential",
+  "solver": "cadical195",
+  "status": "SAT",
+  "q": [
+    4,
+    2,
+    0,
+    5,
+    3,
+    1
+  ],
+  "valid": true,
+  "build_s": 0.0008060999680310488,
+  "solve_s": 4.42001037299633e-05,
+  "base_variables": 36,
+  "aux_variables": 110,
+  "max_variable_id": 146,
+  "cnf_clauses": 312,
+  "solver_call_wall_s": 0.0009027000050991774,
+  "run_id": "cbd93ad4cae842098860df3b848dc417",
+  "method": "cadical195:sequential",
+  "threads": 1,
+  "wall_limit_s": 30,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\correctness\\4d016d852dd34b848d71b2764997d3cd\\runs\\cbd93ad4cae842098860df3b848dc417\\solver.log",
+  "exit_code": 0,
+  "total_wall_s": 0.17585840006358922,
+  "peak_rss_mib": 32.94140625,
+  "memory_sample_s": 0.05
+}

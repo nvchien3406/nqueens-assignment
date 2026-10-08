@@ -1,0 +1,20 @@
+{
+  "n": 4,
+  "encoding": "product",
+  "solver": "cadical195",
+  "status": "SAT",
+  "q": [
+    2,
+    0,
+    3,
+    1
+  ],
+  "valid": true,
+  "build_s": 0.0008145000319927931,
+  "solve_s": 7.100007496774197e-05,
+  "total_wall_s": 0.0009574000723659992,
+  "base_variables": 16,
+  "aux_variables": 0,
+  "max_variable_id": 16,
+  "cnf_clauses": 84
+}

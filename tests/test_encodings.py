@@ -1,6 +1,6 @@
 """Kiểm tra các encoder AMO và CNF N-Queens."""
 
-from itertools import product
+from itertools import product, combinations
 
 import pytest
 from pysat.solvers import Solver
@@ -84,3 +84,38 @@ def test_nqueens(encode_amo, solver_name, n):
             q.append(columns[0])
 
         assert validate(q)
+@pytest.mark.parametrize("m", [17, 25, 100])
+def test_product_recursive(m):
+    # ID không liên tiếp để kiểm tra encoder không phụ thuộc cách đánh số.
+    variables = [10 + 2 * i for i in range(m)]
+    reserved_top = variables[-1] + 10
+
+    clauses, top_id = product_amo(variables, reserved_top)
+
+    assert top_id > reserved_top
+    assert all(
+        abs(literal) in variables
+        or reserved_top < abs(literal) <= top_id
+        for clause in clauses
+        for literal in clause
+    )
+
+    with Solver(name="glucose3", bootstrap_with=clauses) as solver:
+        # Không biến gốc nào đúng: phải SAT.
+        assert solver.solve(
+            assumptions=[-v for v in variables]
+        )
+
+        # Mỗi trường hợp có đúng một biến gốc đúng: phải SAT.
+        for selected in variables:
+            assumptions = [
+                v if v == selected else -v
+                for v in variables
+            ]
+            assert solver.solve(assumptions=assumptions)
+
+        # Bất kỳ hai biến gốc cùng đúng: phải UNSAT.
+        for first, second in combinations(variables, 2):
+            assert not solver.solve(
+                assumptions=[first, second]
+            )

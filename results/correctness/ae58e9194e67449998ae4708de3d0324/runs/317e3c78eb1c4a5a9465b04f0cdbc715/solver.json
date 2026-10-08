@@ -1,0 +1,15 @@
+{
+  "n": 3,
+  "encoding": "product",
+  "solver": "glucose3",
+  "status": "UNSAT",
+  "q": null,
+  "valid": null,
+  "build_s": 0.00022990000434219837,
+  "solve_s": 2.7899863198399544e-05,
+  "total_wall_s": 0.0002976998221129179,
+  "base_variables": 9,
+  "aux_variables": 44,
+  "max_variable_id": 53,
+  "cnf_clauses": 90
+}

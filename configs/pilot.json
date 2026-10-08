@@ -1,0 +1,26 @@
+{
+  "sizes": [16, 32, 64, 128],
+  "repeats": 1,
+  "wall_limit_s": 30,
+  "memory_limit_mib": 8192,
+  "methods": [
+    "glucose3:binomial",
+    "glucose3:binary",
+    "glucose3:commander",
+    "glucose3:product",
+    "glucose3:sequential",
+    "cadical195:binomial",
+    "cadical195:binary",
+    "cadical195:commander",
+    "cadical195:product",
+    "cadical195:sequential",
+    "cp_sat",
+    "gurobi_mip",
+    "cplex_cp",
+    "cplex_mip"
+  ],
+  "disabled_methods": {
+    "cplex_cp": "Chờ hoàn tất cài đặt và giấy phép IBM",
+    "cplex_mip": "Chờ hoàn tất cài đặt và giấy phép IBM"
+  }
+}

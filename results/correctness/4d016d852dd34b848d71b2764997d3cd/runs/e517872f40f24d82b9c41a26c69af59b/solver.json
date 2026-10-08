@@ -1,0 +1,21 @@
+{
+  "n": 5,
+  "encoding": "binomial",
+  "solver": "glucose3",
+  "status": "SAT",
+  "q": [
+    3,
+    1,
+    4,
+    2,
+    0
+  ],
+  "valid": true,
+  "build_s": 0.00019209994934499264,
+  "solve_s": 2.159993164241314e-05,
+  "total_wall_s": 0.0002641999162733555,
+  "base_variables": 25,
+  "aux_variables": 0,
+  "max_variable_id": 25,
+  "cnf_clauses": 170
+}

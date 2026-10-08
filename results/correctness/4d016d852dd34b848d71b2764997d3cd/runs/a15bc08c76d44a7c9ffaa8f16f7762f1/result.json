@@ -1,0 +1,30 @@
+{
+  "n": 4,
+  "encoding": "binomial",
+  "solver": "glucose3",
+  "status": "SAT",
+  "q": [
+    2,
+    0,
+    3,
+    1
+  ],
+  "valid": true,
+  "build_s": 0.00014130002819001675,
+  "solve_s": 2.3900065571069717e-05,
+  "base_variables": 16,
+  "aux_variables": 0,
+  "max_variable_id": 16,
+  "cnf_clauses": 84,
+  "solver_call_wall_s": 0.00021609989926218987,
+  "run_id": "a15bc08c76d44a7c9ffaa8f16f7762f1",
+  "method": "glucose3:binomial",
+  "threads": 1,
+  "wall_limit_s": 30,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\correctness\\4d016d852dd34b848d71b2764997d3cd\\runs\\a15bc08c76d44a7c9ffaa8f16f7762f1\\solver.log",
+  "exit_code": 0,
+  "total_wall_s": 0.1801682999357581,
+  "peak_rss_mib": 31.99609375,
+  "memory_sample_s": 0.05
+}

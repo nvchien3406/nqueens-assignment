@@ -1,0 +1,22 @@
+{
+  "n": 6,
+  "encoding": "binary",
+  "solver": "glucose3",
+  "status": "SAT",
+  "q": [
+    4,
+    2,
+    0,
+    5,
+    3,
+    1
+  ],
+  "valid": true,
+  "build_s": 0.00038599991239607334,
+  "solve_s": 6.849993951618671e-05,
+  "total_wall_s": 0.0005165000911802053,
+  "base_variables": 36,
+  "aux_variables": 74,
+  "max_variable_id": 110,
+  "cnf_clauses": 388
+}

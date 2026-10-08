@@ -1,0 +1,24 @@
+{
+  "n": 8,
+  "encoding": "product",
+  "solver": "glucose3",
+  "status": "SAT",
+  "q": [
+    4,
+    6,
+    1,
+    5,
+    2,
+    0,
+    3,
+    7
+  ],
+  "valid": true,
+  "build_s": 0.0007256001699715853,
+  "solve_s": 0.00014279992319643497,
+  "total_wall_s": 0.0009809001348912716,
+  "base_variables": 64,
+  "aux_variables": 216,
+  "max_variable_id": 280,
+  "cnf_clauses": 704
+}

@@ -1,0 +1,22 @@
+{
+  "n": 6,
+  "encoding": "binary",
+  "solver": "cadical195",
+  "status": "SAT",
+  "q": [
+    1,
+    3,
+    5,
+    0,
+    2,
+    4
+  ],
+  "valid": true,
+  "build_s": 0.0008831999730318785,
+  "solve_s": 0.00019160006195306778,
+  "total_wall_s": 0.0011308998800814152,
+  "base_variables": 36,
+  "aux_variables": 74,
+  "max_variable_id": 110,
+  "cnf_clauses": 388
+}

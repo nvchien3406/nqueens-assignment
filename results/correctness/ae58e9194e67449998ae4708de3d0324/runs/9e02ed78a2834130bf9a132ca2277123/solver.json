@@ -1,0 +1,20 @@
+{
+  "n": 4,
+  "encoding": "sequential",
+  "solver": "cadical195",
+  "status": "SAT",
+  "q": [
+    2,
+    0,
+    3,
+    1
+  ],
+  "valid": true,
+  "build_s": 0.0007850001566112041,
+  "solve_s": 4.91999089717865e-05,
+  "total_wall_s": 0.0008807000704109669,
+  "base_variables": 16,
+  "aux_variables": 42,
+  "max_variable_id": 58,
+  "cnf_clauses": 116
+}

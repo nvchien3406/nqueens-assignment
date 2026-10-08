@@ -1,0 +1,15 @@
+{
+  "n": 3,
+  "encoding": "commander",
+  "solver": "cadical195",
+  "status": "UNSAT",
+  "q": null,
+  "valid": null,
+  "build_s": 0.0005881998222321272,
+  "solve_s": 5.360017530620098e-05,
+  "total_wall_s": 0.0006553998682647943,
+  "base_variables": 9,
+  "aux_variables": 0,
+  "max_variable_id": 9,
+  "cnf_clauses": 34
+}

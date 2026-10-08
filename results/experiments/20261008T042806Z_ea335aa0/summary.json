@@ -1,0 +1,12 @@
+{
+  "experiment_id": "20261008T042806Z_ea335aa0",
+  "state": "FINISHED",
+  "planned": 56,
+  "processed": 56,
+  "remaining": 0,
+  "status_counts": {
+    "SAT": 45,
+    "NOT_RUN": 8,
+    "TIMEOUT": 3
+  }
+}

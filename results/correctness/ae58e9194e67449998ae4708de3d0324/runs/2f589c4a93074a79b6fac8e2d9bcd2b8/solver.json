@@ -1,0 +1,15 @@
+{
+  "n": 3,
+  "encoding": null,
+  "solver": "cp_sat",
+  "status": "UNSAT",
+  "native_status": "INFEASIBLE",
+  "q": null,
+  "valid": null,
+  "build_s": 0.018990200012922287,
+  "solve_s": 0.005205199820920825,
+  "total_wall_s": 0.024263199884444475,
+  "native_variables": 3,
+  "native_constraints": 3,
+  "threads": 1
+}

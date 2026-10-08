@@ -1,0 +1,33 @@
+{
+  "n": 8,
+  "encoding": null,
+  "solver": "cp_sat",
+  "status": "SAT",
+  "native_status": "OPTIMAL",
+  "q": [
+    4,
+    7,
+    3,
+    0,
+    6,
+    1,
+    5,
+    2
+  ],
+  "valid": true,
+  "build_s": 0.01568439998663962,
+  "solve_s": 0.012925400165840983,
+  "native_variables": 8,
+  "native_constraints": 3,
+  "threads": 1,
+  "solver_call_wall_s": 0.028706799959763885,
+  "run_id": "64354850b6f74087807c48517bee782c",
+  "method": "cp_sat",
+  "wall_limit_s": 30,
+  "memory_limit_mib": 8192,
+  "log_path": "E:\\nqueens-assignment\\results\\correctness\\ae58e9194e67449998ae4708de3d0324\\runs\\64354850b6f74087807c48517bee782c\\solver.log",
+  "exit_code": 0,
+  "total_wall_s": 1.0220141999889165,
+  "peak_rss_mib": 90.11328125,
+  "memory_sample_s": 0.05
+}
