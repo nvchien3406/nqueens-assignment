@@ -1,0 +1,7 @@
+{
+  "limit_status": "MEMORY_LIMIT",
+  "exit_code": 15,
+  "total_wall_s": 34.35661339999933,
+  "peak_rss_mib": 8199.8125,
+  "memory_sample_s": 0.05
+}

@@ -1,0 +1,42 @@
+{
+  "original_run_id": "8434701e4c7449ecbe0bc40bbf0b6ed9",
+  "original_status": "ERROR",
+  "original_exit_code": 3221226505,
+  "original_exit_code_hex": "0xc0000409",
+  "rerun_status": "MEMORY_LIMIT",
+  "rerun_total_wall_s": 54.76177950000056,
+  "rerun_peak_rss_mib": 8196.34765625,
+  "trace_metrics": {
+    "limit_status": "MEMORY_LIMIT",
+    "exit_code": 15,
+    "total_wall_s": 34.35661339999933,
+    "peak_rss_mib": 8199.8125,
+    "memory_sample_s": 0.05
+  },
+  "trace_observations": [
+    {
+      "approx_elapsed_s": 15,
+      "phase": "Building Binary CNF",
+      "location": "src/solvers/sat_solvers.py:57"
+    },
+    {
+      "approx_elapsed_s": 30,
+      "phase": "Loading clauses into CaDiCaL during solver construction",
+      "location": "src/solvers/sat_solvers.py:59"
+    }
+  ],
+  "expected_binary_cnf_clauses": 39300904,
+  "expected_binary_cnf_variables": 1055888,
+  "conclusion": "Both new runs hit the configured 8192 MiB RSS limit. The old native crash was not reproduced. Last periodic traceback places execution in CaDiCaL initialization/loading, not solve(). The exact historical crash cause remains unconfirmed.",
+  "benchmark_update": "None: no successful valid solution in reruns. Preserve the historical ERROR and all original benchmark statistics.",
+  "source_edits": "None",
+  "tracked_files_checked": 3306,
+  "tracked_files_changed": [],
+  "memory_after": {
+    "total": 16893382656,
+    "available": 9083674624,
+    "percent": 46.2,
+    "used": 7809708032,
+    "free": 9083674624
+  }
+}

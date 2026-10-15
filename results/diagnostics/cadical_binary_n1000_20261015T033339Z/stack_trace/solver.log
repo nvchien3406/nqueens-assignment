@@ -1,0 +1,18 @@
+Timeout (0:00:15)!
+Thread 0x00002ce0 (most recent call first):
+  File "E:\nqueens-assignment\src\encodings\binary.py", line 32 in encode_amo
+  File "E:\nqueens-assignment\src\encodings\common.py", line 79 in build_cnf
+  File "E:\nqueens-assignment\src\solvers\sat_solvers.py", line 57 in solve_nqueens
+  File "E:\nqueens-assignment\src\evaluation\worker.py", line 55 in solve_case
+  File "E:\nqueens-assignment\src\evaluation\worker.py", line 160 in main
+  File "<string>", line 1 in <module>
+Timeout (0:00:15)!
+Thread 0x00002ce0 (most recent call first):
+  File "E:\nqueens-assignment\.venv\Lib\site-packages\pysat\solvers.py", line 2430 in new
+  File "E:\nqueens-assignment\.venv\Lib\site-packages\pysat\solvers.py", line 2384 in __init__
+  File "E:\nqueens-assignment\.venv\Lib\site-packages\pysat\solvers.py", line 462 in new
+  File "E:\nqueens-assignment\.venv\Lib\site-packages\pysat\solvers.py", line 404 in __init__
+  File "E:\nqueens-assignment\src\solvers\sat_solvers.py", line 59 in solve_nqueens
+  File "E:\nqueens-assignment\src\evaluation\worker.py", line 55 in solve_case
+  File "E:\nqueens-assignment\src\evaluation\worker.py", line 160 in main
+  File "<string>", line 1 in <module>

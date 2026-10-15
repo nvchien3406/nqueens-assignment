@@ -1,0 +1,24 @@
+{
+  "kind": "stack_trace_diagnostic",
+  "started_utc": "2026-10-15T03:35:19.092675+00:00",
+  "n": 1000,
+  "method": "cadical195:binary",
+  "wall_limit_s": 100,
+  "memory_limit_mib": 8192,
+  "trace_interval_s": 15,
+  "command": [
+    "E:\\nqueens-assignment\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "faulthandler",
+    "-c",
+    "import faulthandler; faulthandler.enable(); faulthandler.dump_traceback_later(15, repeat=True); from src.evaluation.worker import main; main(); faulthandler.cancel_dump_traceback_later()",
+    "--n",
+    "1000",
+    "--method",
+    "cadical195:binary",
+    "--output",
+    "E:\\nqueens-assignment\\results\\diagnostics\\cadical_binary_n1000_20261015T033339Z\\stack_trace\\solver.json"
+  ],
+  "note": "Original worker and solver code; traceback dumps only. Diagnostic timing is not a replacement benchmark."
+}

@@ -9,5 +9,24 @@
     "TIMEOUT": 101,
     "MEMORY_LIMIT": 42,
     "ERROR": 1
+  },
+  "diagnostic_reruns": {
+    "kind": "supplementary_diagnostics",
+    "original_run_id": "8434701e4c7449ecbe0bc40bbf0b6ed9",
+    "original_repeat": 1,
+    "n": 1000,
+    "method": "cadical195:binary",
+    "recorded": 2,
+    "successful_runs": 0,
+    "status_counts": {
+      "MEMORY_LIMIT": 2
+    },
+    "included_in_main_benchmark": false,
+    "historical_crash_reproduced": false,
+    "historical_crash_cause_confirmed": false,
+    "jsonl_path": "rerun_results.jsonl",
+    "csv_path": "rerun_results.csv",
+    "report_path": "notebook_analysis/rerun_diagnostics.md",
+    "source_diagnosis_path": "results/diagnostics/cadical_binary_n1000_20261015T033339Z/diagnosis.json"
   }
 }
