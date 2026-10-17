@@ -27,16 +27,6 @@ Tổng cộng: **5 encoding × 2 SAT solver + 4 đối chứng = 14 cấu hình*
 Các encoder được viết bằng hàm Python.
 PySAT chỉ được dùng để gọi solver, không dùng CardEnc để sinh CNF.
 
-## Trạng thái
-
-- Đã triển khai năm encoder và năm module solver.
-- Correctness runner đã đạt 98/98 ca, không bỏ qua cấu hình.
-- Đã hoàn thành benchmark gồm 756 lượt.
-- Đã có comparator và notebook phân tích.
-- Đã xuất bảng CSV và biểu đồ PNG/PDF.
-- Báo cáo đang được chuẩn bị.
-- Docker và W&B chưa nằm trong quy trình thực nghiệm đã kiểm chứng.
-
 ## Cấu trúc
 
 ```text
@@ -254,10 +244,6 @@ $env:CPO_EXECUTABLE = (Resolve-Path ".\.venv\Scripts\cpoptimizer.exe").Path
 
 Mỗi lần gọi tạo một thư mục kết quả mới.
 
-Hiện `configs/pilot.json` có cùng nội dung với `main.json`;
-không dùng file này với kỳ vọng chạy thử nhanh.
-Cấu hình của các pilot trước được giữ trong thư mục kết quả tương ứng.
-
 ## Kết quả đã hoàn thành
 
 Thí nghiệm chính:
@@ -299,8 +285,7 @@ của bộ giám sát được sửa. Sau đó chạy tiếp 517 lượt.
 Dấu vết phiên chạy được lưu qua `resume_session`
 và metadata trong `resume_backups/`.
 
-Một lượt CaDiCaL + Binary tại N=1000, repeat=1 kết thúc bất thường.
-Bản ghi ERROR được giữ nguyên.
+### Lưu ý khi diễn giải
 
 Giới hạn cần xét khi diễn giải:
 
@@ -352,8 +337,13 @@ Kích thước CNF được tính bằng cách cộng chi phí AMO theo độ d�
 không dựng toàn bộ CNF lớn. Kết quả khớp 420 bản ghi có thông số CNF.
 Đây là kích thước trước tiền xử lý của solver.
 
-## Công việc còn lại
+## Báo cáo
 
-- Viết báo cáo theo mẫu cas-sc.
-- Đưa bảng, hình và giới hạn thực nghiệm vào báo cáo.
-- Hoàn thiện trích dẫn và mục Data Availability.
+Báo cáo được soạn trên Overleaf, theo mẫu Elsevier `cas-sc`, với tiêu đề:
+**An Experimental Comparison of SAT Encodings, Constraint Programming,
+and Mixed-Integer Programming for the N-Queens Problem**.
+
+Bản PDF hiện tại có 15 trang, gồm Abstract, Introduction, Background,
+Methodology, Experiments and Results, Conclusion, Data Availability và References.
+Nội dung đã được đối chiếu với đề bài và số liệu thí nghiệm chính;
+hai lượt chẩn đoán được trình bày riêng.
