@@ -342,8 +342,3 @@ không dựng toàn bộ CNF lớn. Kết quả khớp 420 bản ghi có thông 
 Báo cáo được soạn trên Overleaf, theo mẫu Elsevier `cas-sc`, với tiêu đề:
 **An Experimental Comparison of SAT Encodings, Constraint Programming,
 and Mixed-Integer Programming for the N-Queens Problem**.
-
-Bản PDF hiện tại có 15 trang, gồm Abstract, Introduction, Background,
-Methodology, Experiments and Results, Conclusion, Data Availability và References.
-Nội dung đã được đối chiếu với đề bài và số liệu thí nghiệm chính;
-hai lượt chẩn đoán được trình bày riêng.
